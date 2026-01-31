@@ -670,7 +670,7 @@ pub struct TweenConfig {
 ///
 /// - Each time a _single_ cycle is completed, the tween can emit a
 ///   [`CycleCompletedEvent`]. The event is emitted as a buffered event, to be
-///   read by another system through an [`EventReader`]. For component targets,
+///   read by another system through an [`MessageReader`]. For component targets,
 ///   observers are also triggered. Both of these are enabled through
 ///   [`with_cycle_completed_event()`] and [`set_cycle_completed_event()`].
 ///   Per-cycle events are disabled by default.
@@ -852,7 +852,7 @@ impl Tween {
     ///
     /// ```
     /// # use bevy_tweening::{lens::*, *};
-    /// # use bevy::{ecs::event::EventReader, math::{Vec3, curve::EaseFunction}};
+    /// # use bevy::{ecs::message::MessageReader, math::{Vec3, curve::EaseFunction}};
     /// # use std::time::Duration;
     /// let tween = Tween::new(
     ///     // [...]
@@ -866,7 +866,7 @@ impl Tween {
     /// // Raise a CycleCompletedEvent each cycle
     /// .with_cycle_completed_event(true);
     ///
-    /// fn my_system(mut reader: EventReader<CycleCompletedEvent>) {
+    /// fn my_system(mut reader: MessageReader<CycleCompletedEvent>) {
     ///     for ev in reader.read() {
     ///         println!(
     ///             "Tween animation {:?} raised CycleCompletedEvent for target {:?}!",
@@ -1418,7 +1418,7 @@ mod tests {
 
     use std::ops::{Deref as _, DerefMut as _};
 
-    use bevy::ecs::{change_detection::MaybeLocation, component::Tick, system::SystemState};
+    use bevy::ecs::{change_detection::MaybeLocation, change_detection::Tick, system::SystemState};
 
     use super::*;
     use crate::{lens::*, test_utils::assert_approx_eq};
