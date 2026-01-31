@@ -3,6 +3,22 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.15.0] 2026-01-31
+
+_This version is compatible with Bevy 0.18_
+
+### Added
+
+- Added the missing `EntityEvent` derive to `AnimCompletedEvent`.
+
+### Changed
+
+- Compatible with Bevy 0.18
+
+### Fixed
+
+- Fix examples, add a missing `UiTransformScaleLens` to animate the `UiTransform::scale`.
+
 ## [0.14.0] 2025-10-07
 
 _This version is compatible with Bevy 0.17_

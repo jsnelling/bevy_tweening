@@ -1,6 +1,6 @@
 [package]
 name = "bevy_tweening"
-version = "0.14.0"
+version = "0.15.0"
 authors = [
     "François Mockers <mockersf@gmail.com>",
     "Jerome Humbert <djeedai@gmail.com>",
@@ -38,7 +38,10 @@ bevy = { version = "0.18", default-features = false, features = [
 thiserror = "2"
 
 [dev-dependencies]
-bevy-inspector-egui = { version = "0.36" }
+bevy-inspector-egui = { version = "0.36", default-features = false, features = [
+    "bevy_render",
+    "bevy_pbr",
+] }
 
 [[example]]
 name = "ambient_light"

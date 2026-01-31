@@ -670,8 +670,8 @@ pub struct TweenConfig {
 ///
 /// - Each time a _single_ cycle is completed, the tween can emit a
 ///   [`CycleCompletedEvent`]. The event is emitted as a buffered event, to be
-///   read by another system through an [`MessageReader`]. For component targets,
-///   observers are also triggered. Both of these are enabled through
+///   read by another system through an [`MessageReader`]. For component
+///   targets, observers are also triggered. Both of these are enabled through
 ///   [`with_cycle_completed_event()`] and [`set_cycle_completed_event()`].
 ///   Per-cycle events are disabled by default.
 /// - At the end of all cycles, when the animation itself completes, the tween
