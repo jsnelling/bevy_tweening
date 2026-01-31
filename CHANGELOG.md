@@ -10,6 +10,7 @@ _This version is compatible with Bevy 0.18_
 ### Added
 
 - Added the missing `EntityEvent` derive to `AnimCompletedEvent`.
+- Added `UiTransformTranslationPxLens` to animate the translation of a `UiTransform` (pixel values only).
 
 ### Changed
 
